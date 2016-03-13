@@ -1,0 +1,33 @@
+LUPASCU Andrei,grupa 311 CB
+
+	Explicarea fiecarei functii:
+
+1) main()
+	-am citit valorile dreptelor si a celor M puncte in 5 vectori alocati dinamici (aux1-3 = ecuatiile dreptelor, aux4-5 coordonatele punctelor)
+	-pentru cerinta 1, am format radacina arborelui,apoi arborele printr-un apel recursiv al functiei cerinta_1() ( explicata mai jos) pentru ambii subarbori
+	-pentru cerinta 2, am format arborele prin apeluri repetate a functiei adaug_dreapta (un apel pentru fiecare dreapta citita)
+	-in acest moment,arborele construit contine doar ecuatiile dreptelor
+	-pentru fiecare din cele M puncte citite,parcurg arborele cu functia adaug_punct(arbore,punct)
+	-afisez arborele in postordine,prin apelul functiei postordine(arbore)
+	-citesc Q puncte,iar pentru fiecare punct citit,afisez valoarea returnata de functia cauta(arbore,punct)
+	-eliberez memoria alocata
+2) void cerinta1(arbore,ecuatiile dreptelor,fisier input)
+	-citesc valorile NOD,FIU STANG,FIU DREPT
+	-in nodul curent,atribui ecuatia dreptei cu indicele NOD
+	-daca FIU STANG == 1, creez un nou nod,il leg in subarborele stang al nodului curent si apelez cerinta1(subarbore stang)
+	-analog pentru FIU DREPT
+3) void adaug_dreapta(arbore,dreapta)
+	-daca am ajuns la o frunza a arborelui,creez un nou nod,il leg de frunza arborelui si ii atribui ecuatia dreptei data prin parametru si ies din recursivitate
+	-daca dreapta data prin parametru este paralela cu dreapta nodului curent,parcurg doar unul dintre subarbori,in functie de valorile termenilor liberi
+	-in caz contrar,parcurg ambii subarbori ai arborelui
+4) void adaug_punct(arbore,punct)
+	-daca nodul curent este o frunza,creez un nou nod,il leg de arbore si ii atribui coordonatele si indicele punctului dat prin parametru si ies din recursivitate
+	-in functie de inegalitatea ax+by+c <> 0 , apelez adaug_punct(unul dintre subarbori, punct)
+5) void postordine(arbore)
+	-daca nodul e de tip punct,il afisez si ies din recursivitate
+	-daca nodul nu are fiu stang,afisez caracterul "null". In caz contrar,apelez postordine(subarbore stang)
+	-analog pentru fiul drept al nodului
+	-afisez ecuatia dreptei in formatul cerintei
+6) int cauta(arbore,punct)
+	-daca nodul curent este de tip punct,returnez indicele punctului salvat de nod
+	-returnez cauta(unul dintre subarbori,punct),in functie de inegalitatea ax+by+c <> 0
