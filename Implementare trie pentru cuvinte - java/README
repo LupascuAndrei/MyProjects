@@ -1,0 +1,14 @@
+Student: Lupascu Andrei
+Grupa: 321 CB
+Tema: Tema 1 , POO
+
+Explicatia algoritmului folosit :
+
+- Construiesc trie-urile pe rand ; dupa ce termin de prelucrat primul trie,eliberez memoria lui si il construiesc pe al 2-lea
+- Functiile de parcurgere ale arborelui sunt iterative (adaug,elimin si caut noduri in mod iterativ). Exceptie o face getsortedelements() care cauta nodurile dupa prefixul gasit in mod recursiv
+- In fiecare nod din arbore,tin salvat un string (cuvantul detinut de nod,daca detine vreunul ) , un contor (numarul de aparitii ale cuvantului ) si un vector de fii ai nodului alocati static.
+- Diferenta dintre cei doi trie este la nivelul tipul claselor trimise prin parametru ( numite Tip1 , Tip2 ). Diferenta dintre cele doua clase este la nivelul functiei ToCharArray()
+- Clasa Functii contine metodele ce-mi transforma un caracter intr-un intreg intre 1 si 70 ( pentru a transforma caractere in indici pentru muchii ) si o metoda care returneaza cel mai mic sir dpdv lexicografic dintre 2 siruri primite ca parametru
+- Calea in care salvez,sterg sau caut un nod nou este data de metoda ToCharArray ale claselor Tip1 sau Tip2,in functie de cerinta
+- Adaugarea unui cuvant,stergerea si cautarea unui cuvant sunt realizate in TETA( lungime cuvant ) ; 
+- Afisarea tuturor subarborilor unui cuvant este realizata in TETA( lungime cuvant ) + O ( numar subarbori * lungimea unui subarbore )

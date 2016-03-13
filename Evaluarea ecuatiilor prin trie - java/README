@@ -1,0 +1,39 @@
+Student : Lupascu Andrei
+Grupa : 321 CB
+Tema : Tema 2 OOP
+
+Explicatia metodei folosite :
+
+	- rulez tema prin IDE-ul eclipse si trimit ca parametru prin IDE fisierul de intrare
+	- salvez fiecare variabila calculata intr-o lista de variabile ( in care tin salvate numele si valoarea variabilei )
+	- la citirea unei variabile,caut valoarea ei in lista de variabile si pentru introducerea in arbore,folosesc doar valoarea integer returnata
+	- adaug elementele pe rand in arbore ,mereu in extremitatea dreapta (recursiv pana cand ordinul nodului curent < ordinul nodului de adaugat )
+	- operatorii au asociat un ordin de la 1 la 4,in care adaug un factor de multiplicare pentru fiecare paranteza in care se afla acestia ( 10 x nr de paranteze intre care se afla)
+	- numerele intregi au asociate ordinul 9999999 ( vor fi mereu frunze )
+	- pentru ex1 , afisez arborele in ordine SRD intr-un for ( pas de afisat : lung_maxima_arbore )
+	- pentru ex2 , afisez coloana la care am citit o variabila care nu se afla in lista de variabile sau "1" daca primul cuvant citit nu este o variabila; "ok!" in caz contrar
+	- pentru ex3 , rezolvarea arborelui este recursiva si returnez valoarea subarborilor nodului curent prelucrata cu operatorul salvat de nodul curent
+
+Detalierea claselor folosite : 
+
+WriterEx- fisier de output pentru cerintele 1,2,3
+Tema	- detine functia main(String[] args); apeleaza Reader pentru fiecare linie citita si adauga in arbore fiecare cuvant citit prin reader cu valoarea salvata in lista
+	- pastreaza tipul erorii pentru linia curenta,daca exista una
+Reader  - citeste parsat fiecare linie din fisierul de intrare
+	- metodele readOperator/readConst/readVariable citesc si returneaza un String asociat cuvantului curent (pentru valori,salveaza si parantezele citite)
+Nod	- nodul din arbore; contine referinte catre doi subarbori, valoarea intreaga salvata de nod ( daca este frunza ) si tipul operatorului ( daca nu este frunza )
+Nod_Operator - extinde Nod; contine metoda expresie() care returneaza un sir de tipul "((((...E))))..." ; metoda verifica cate paranteze trebuie sa scrie parcurgand recursiv
+													subarborii nodului curent
+Nod_Constanta - extinde Nod; contine metoda toString() care returneaza un sir de tipul "(((...N/T/F)))..."
+		- numarul de paranteze ce trebuie afisate este salvat ca informatie in nod.pr ( pozitiv - deschise ; negativ - inchise)
+		- caracterul ce trebuie afisat (N T F ) este calculat prin metoda arbore.define() ce este apelata la sfarsitul fiecarei linii citite
+Arbore - arborele propriuzis
+	- contine metodele necesare adaugarii unui nod nou in arbore
+	- cerinta 1 este afisata prin metoda void afiseaza() ( explicata in cod prin comentarii )
+	- dfs.define(Nod x) scrie in subarborii nodului trimis ca parametru tipul nodului parametru; recursiv,salvez daca frunzele sunt N,T sau F.
+	- valueOfArb() calculeaza recursiv valoarea integer a arborelui (ex3)
+StructVar - structura ; tine salvat un string ( nume) si un integer ( valoarea variabilei )
+ListaVar - lista de variabile
+	- contine metode pentru adaugarea unei variabile noi,cautarea unei variabile in lista si returnarea valorii unei variabile
+
+			
