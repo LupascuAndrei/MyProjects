@@ -1,0 +1,28 @@
+Lupascu Andrei - 311 CB
+
+explicarea functiilor implementate :
+
+1) functiiLG.c : 
+
+a) int priority_cmp( void *a,void *b) - compara prioritatile proceselor 'a' si 'b' si,daca acestea sunt egale,compara timpul de intrare in coada
+
+proces scoate_coada(ALG aL) - elimina primul element din coada si returneaza informatia acestuia sub forma de structura (proces)
+
+void inserare_coada(ALG aL,proces p)- insereaza structura 'p' in coada sortata (notata aL)
+				- creez o celula noua in care copiez informatia 'p' si inserez celula in coada printr-o singura parcurgere(priority queue)
+
+void adauga_stiva(ALG stiva, proces p) -adauga structura proces la inceputul stivei
+
+proces sterge_stiva(ALG stiva) - sterge primul element din stiva si returneaza informatia acestuia
+
+void sterge_id_din_coada(ALG aL, int id) -folosind o coada auxiliara,mut toate elementele din coada principala in coada auxiliara pana cand gasesc valoarea cautata sau coada =vida
+					 -cand gasesc valoarea cautata,o elimin si reconstruiesc coada principala adaugand toate elementele din coada secundara
+
+void muta_id_din_coada_in_eveniment(ALG aL, int id,ALG stiva) -asemanator functiei precedente,dar in loc sa sterg valoarea gasita,o introduc in stiva
+
+void distruge_stiva_si_adauga_in_coada(ALG coada, ALG stiva) -pentru task-ul "event x", muta toate elementele din stiva "x" in coada principala
+
+2) main():
+	-citesc toate liniile din fisier pana cand ating sfarsitul fisierului. ( citirea prin linii de char este mai rapida decat citirea valorilor int)
+	-pentru fiecare linie citita,verific primul cuvant din linie si identific task-ul liniei. Apelez,apoi,functia construita pentru task-ul respectiv
+	-la sfarsitul fiecarei linii cititie si prelucrate,afisez continutul cozii si ale stivelor diferite de null
