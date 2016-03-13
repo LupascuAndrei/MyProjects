@@ -1,0 +1,20 @@
+LUPASCU Andrei - 321 CB
+
+1) 
+-in Main() aloc memorie si citesc banda,numarul de stari si matricea starilor
+-char * rezolva_turing() returneaza un sir de caractere ce are semnificatia benzii dupa intrarea intr-o stare finala sau "Eroare!" daca s-a ajuns pe o stare nedefinita
+Functia este iterativa si schimba cursorul,starea urmatoare si caracterul de pe starea curenta in functie de starea curenta si caracterul de pe cursorul curent.
+
+
+2) Compar primul caracter din cuvantul 1 cu primul caracter din cuvantul 2. Scriu "#" pe fiecare caracter in timpul comparatiei. Daca sunt egale caracterele,verific daca e sfarsit de cuvant. Explicarea starilor :
+
+s0 - stare de inceput. schimb starea in functie de caracterul gasit,apoi sterg caracterul gasit
+s1 - am gasit "0" in primul cuvant,ma deplasez in dreapta pana gasesc #
+s2 - compar "0" in primul cuvant cu primul caracter gasit din al doilea. 
+s3 - cele 2 caractere sunt egale,verific daca e sfarsit de cuvant
+s4 - cele 2 caractere sunt egale, ma deplasez in stanga pana gasesc "0" sau "1"
+s5 - ma deplasez in stanga pana gasesc "#"; apoi,intru in starea initiala
+s6 - primul caracter e mai mic, ma deplasez in dreapta pana gasesc "#" si scriu "#" pe drum. 
+s7,s8 - scriu # de la sfarsitul sirului pana la inceputul sirului
+s9,s10,s11 -> analog,dar pentru cazul in care gasesc "1" in primul cuvant
+s12,s13 -> verific daca sunt la sfarsit de cuvant
